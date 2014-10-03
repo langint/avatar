@@ -46,3 +46,8 @@ production:
    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 
 ```
+
+To initialize the database (after adding database.yml file above) run the following set of commands
+ rake db:create
+ rake db:migrate
+ rake db:seed
