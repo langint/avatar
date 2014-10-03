@@ -13,6 +13,7 @@ Specification
 * For security purposes file config/database.yml has been deleted.
   To launch the applcation you have to put your database.yml file in config directory. It should contain database access data, such as:
 
+```
 development:
   adapter: mysql2
   database: YOUR DATABASE NAME
@@ -21,4 +22,4 @@ development:
   password: PASSWORD
   timeout: 5000
   encoding: utf8
-
+```
