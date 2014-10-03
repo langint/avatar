@@ -3,26 +3,25 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+**************
+This application is a sample framework for adding, updating and deleting users' avatars
+As per the scope it is designed  in a Restful/stateless manner, so that the server does not keep track of the users (no session variables used) but rather the user id is passed between the server and the client 
 
-* Ruby version
+Specification
+* Ruby version 4.1.5
+* Rails version 2.2.0
+* Database mySQL 5.5
 
-* System dependencies
+* For security purposes file config/database.yml has been deleted. 
+  To launch the applcation you have to put your database.yml file in config directory. It should contain information on access to your database, such as:
 
-* Configuration
+development:
+  adapter: mysql2
+  database: YOUR DATABASE NAME
+  host: YOUR HOST
+  username: USERNAME
+  password: PASSWORD
+  timeout: 5000
+  encoding: utf8
+ 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
