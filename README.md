@@ -47,6 +47,11 @@ production:
 
 ```
 
+Install the required gems:
+```
+bundle install
+```
+
 To initialize the database (after adding database.yml file above) run the following set of commands
 ```
  rake db:create
