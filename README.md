@@ -58,3 +58,6 @@ To initialize the database (after adding database.yml file above) run the follow
  rake db:migrate
  rake db:seed
 ```
+
+Your avatar images will be stored in public/avatar_images directory.
+If you experience trouble uploading images there, try changing permissions of public/avatar_images to 777
