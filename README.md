@@ -3,7 +3,7 @@ Avatar Handling Sample
 
 
 This application is a sample framework for adding, updating and deleting users' avatars
-As per the scope it is designed  in a Restful/stateless manner, so that the server does not keep track of t$
+As per the scope it is designed  in a Restful/stateless manner, so that the server does not store the user identity information.
 
 Specification
 * Ruby version 4.1.5
@@ -11,7 +11,7 @@ Specification
 * Database mySQL 5.5
 
 * For security purposes file config/database.yml has been deleted.
-  To launch the applcation you have to put your database.yml file in config directory. It should contain in$
+  To launch the applcation you have to put your database.yml file in config directory. It should contain database access data, such as:
 
 development:
   adapter: mysql2
