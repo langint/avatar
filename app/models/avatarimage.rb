@@ -1,7 +1,7 @@
 class Avatarimage < ActiveRecord::Base
 
-  def self.save(uploaded)
-    path = File.join($IMAGE_PATH, uploaded.original_filename)
+  def self.save(uploaded,name)
+    path = File.join($IMAGE_PATH, name)
     File.open(path,"wb"){|f|f.write(uploaded.read)}
   end
 
