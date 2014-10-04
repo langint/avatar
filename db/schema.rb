@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002233830) do
+ActiveRecord::Schema.define(version: 20141002220851) do
 
   create_table "users", force: true do |t|
-    t.string   "first_name",   limit: 30
-    t.string   "avatar",       limit: 32
-    t.datetime "time_updated"
+    t.string "first_name",   limit: 30
+    t.string "avatar",       limit: 32
+    t.time   "time_updated"
   end
 
 end
