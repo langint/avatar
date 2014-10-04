@@ -18,7 +18,7 @@ class AvatarsControllerTest < ActionController::TestCase
 
   test "file delete" do
     image_before = User.find_by_id(1)[:avatar]
-    webpage = get(:destroy, id: 1) #parameter inconsistency
+    webpage = get(:destroy, id: 1)
     image_after = User.find_by_id(1)[:avatar]
 
     assert(image_before == "rosebud.gif", "The original image for user 2 was not correct")
