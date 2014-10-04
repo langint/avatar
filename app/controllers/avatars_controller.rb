@@ -5,7 +5,7 @@ class AvatarsController < ApplicationController
   
   def show
     @userid=params[:userid].to_i if !params[:userid].nil?
-    @users=User.all.pluck(:id)
+    @users=User.all
     return :back if @userid.nil?
 	
     @img=User.find_by_id(@userid)[:avatar]
@@ -16,8 +16,10 @@ class AvatarsController < ApplicationController
     @userid=params[:userid]
     uploaded=params[:picture]
     if !uploaded.nil?
-       filename= uploaded.original_filename
-       Avatarimage.save(uploaded) 
+       filename= @userid+"."+uploaded.original_filename
+       avt=User.find_by_id(@userid)[:avatar]
+       Avatarimage.delete(avt) if !(avt.nil?||avt.empty?)
+       Avatarimage.save(uploaded,filename) 
        User.register(@userid,filename)
     end
     redirect_to :action=>'show',:userid=>@userid
