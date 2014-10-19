@@ -5,7 +5,7 @@ Avatar Handling Sample
 This application is a sample framework for adding, updating and deleting users' avatars
 As per the scope it is designed  in a Restful/stateless manner, so that the server does not store the user identity information.
 
-**Specification
+Specification
 * Ruby version 2.2.0
 * Rails version 4.1.5
 * Database mySQL 5.5
