@@ -1,6 +1,6 @@
 Avatar Handling  Sample
 
-This application is a sample framework for adding, updating and deleting users' avatars
+This application is a sample framework for adding, updating and deleting users' avatars.
 As per the scope it is designed  in a Restful/stateless manner, so that the server does not store the user identity information.
 
 Specification
@@ -49,5 +49,5 @@ To initialize the database (after adding database.yml file above) run the follow
  rake db:seed
 
 Your avatar images will be stored in public/avatar_images directory.
-If you experience trouble uploading images there, try changing permissions of public/avatar_images to 777
+If you experience trouble uploading images there, try changing permissions of public/avatar_images to 777.
 
