@@ -12,8 +12,13 @@ class AvatarsControllerTest < ActionController::TestCase
     image_before = User.find_by_id(2)[:avatar]
     z = post(:create, :userid => 2, :picture => avatar_image)
     image_after = User.find_by_id(2)[:avatar]
-    assert(image_before == "bloam.jpg", "The original image for user 2 was not correct")
-    assert(image_after == "rosebud.gif", "The image for user 2 was not updated as expected")
+
+    #restore the original file
+    avatar_image = fixture_file_upload('files/building3.jpg','image/gif')
+    z = post(:create, :userid => 2, :picture => avatar_image)
+
+    assert(image_before == "2.building3.jpg", "The original image for user 2 was not correct")
+    assert(image_after == "2.rosebud.gif", "The image for user 2 was not updated as expected")
   end
 
   test "file delete" do
@@ -21,7 +26,15 @@ class AvatarsControllerTest < ActionController::TestCase
     webpage = get(:destroy, id: 1)
     image_after = User.find_by_id(1)[:avatar]
 
-    assert(image_before == "rosebud.gif", "The original image for user 2 was not correct")
-    assert(image_after.nil?, "The image for user 2 was not updated as expected")
+
+    #restore the original file
+    avatar_image = fixture_file_upload('files/bloam.jpg','image/gif')
+    z = post(:create, :userid => 1, :picture => avatar_image)
+
+
+    assert(image_before == "1.bloam.jpg", "The original image for user 1 was not correct")
+    assert(image_after.nil?, "The image for user 1 was not updated as expected")
+
+
   end
 end

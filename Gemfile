@@ -40,4 +40,4 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
   gem 'console'
   gem 'protected_attributes'
   gem 'passenger'
-  
+  gem 'rspec'
