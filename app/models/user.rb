@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :avatar, :time_updated, :first_name
-
-  def self.register(user,avatar)
-    self.update(user,:avatar=>avatar, :time_updated=>Time.now)
-  end
+#  attr_accessible :avatar, :time_updated, :first_name
+	has_one :bio
+	has_and_belongs_to_many :avatars
 
 end
