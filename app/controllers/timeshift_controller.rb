@@ -23,7 +23,7 @@ def initialize(*args)
     puts "Wrong number of arguments!"
   else
     @time = args[0]
-	 @time_shift = args[1]
+    @time_shift = args[1]
   end
 end
 
@@ -37,7 +37,7 @@ def add_time
 	if hours < 12
     am_pm = 'AM'
 	else	
-	 am_pm = 'PM';hours -= 12
+    am_pm = 'PM';hours -= 12
 	end
     hours = 12 if am_pm == 'PM' && hours == 0
     minutes = new_time % 60
@@ -52,7 +52,7 @@ def validate_input
   end
   
   if !@input_error
-	  time_hash = get_time_hash
+    time_hash = get_time_hash
     if (time_hash[:am_pm] == 'am'&&time_hash[:hours]>11) || (time_hash[:am__pm] = 'pm' && time_hash[:hours] > 12)
       @input_error = "Time input cannot be greater than 11:59 AM or 12:59 PM"
     end
