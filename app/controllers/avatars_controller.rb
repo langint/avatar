@@ -4,10 +4,9 @@ class AvatarsController < ApplicationController
   READ_PATH="/avatar_images/"
   
   def show
-    @userid=params[:userid].to_i if !params[:userid].nil?
+    @userid=params[:userid].to_i if unless params[:userid].nil?
     @users=User.all
     return :back if @userid.nil?
-	
     @img=User.find_by_id(@userid)[:avatar]
     @img.nil?||@img.empty? ? @avatar=READ_PATH+"blank.jpg" : @avatar=READ_PATH+@img	
   end
@@ -15,10 +14,10 @@ class AvatarsController < ApplicationController
   def create
     @userid=params[:userid]
     uploaded=params[:picture]
-    if !uploaded.nil?
+    unless uploaded.nil?
        filename= @userid+"."+uploaded.original_filename
        avt=User.find_by_id(@userid)[:avatar]
-       Avatarimage.delete(avt) if !(avt.nil?||avt.empty?)
+       Avatarimage.delete(avt) unless avt.nil?||avt.empty?
        Avatarimage.save(uploaded,filename) 
        User.register(@userid,filename)
     end

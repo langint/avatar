@@ -1,0 +1,34 @@
+class TimeshiftController < ApplicationController
+# --Ruby Code Exercise--
+# Without using any built in date or time functions, write a function/method that accepts two mandatory arguments (time and minutes) that can be added  toge$
+# The first argument is a string of the  format "[H]H:MM {AM|PM}"
+# And the second argument is an integer.
+# Assume the integer is the number of minutes to add to the string.
+# The return value of the function should be a string of the same format as the first argument.
+
+#Required use cases:
+# - The method should take into account going over from AM to PM or vice versa.
+#- It will also handle going into the next hour.
+# - AM/PM should handle upcase or downcase strings.
+# - Error handling for mandatory arguments should be included.
+# Example inputs with expected outputs:
+# - ("9:13 PM", 10) should return "9:23 PM"
+# - ("11:50 AM", 12) should return "12:02 PM"
+
+class ExController < ApplicationController
+
+  attr_accessor :time, :inc
+  def validate
+    @time=time; @inc=inc
+    self.error= "Wrong datatypes" if @time.is_a?(String)||!@inc.is_a(Integer)
+    self.error= "Wrong tume format" if @time!=~/^[0-2]?\d:[0-5]\d (a|A|P|p)(m|M)/
+    return error
+  end
+end
+
+
+
+
+
+
+end
